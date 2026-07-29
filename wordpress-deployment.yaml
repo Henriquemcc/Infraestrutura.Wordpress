@@ -17,6 +17,11 @@ spec:
           envFrom:
             - configMapRef:
                 name: wordpress-configmap-env
+          resources:
+                requests:
+                  cpu: "250m"
+                limits:
+                  cpu: "500m"
   selector:
     matchLabels:
       app: wordpress
