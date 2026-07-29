@@ -16,3 +16,4 @@ resources:
   - db-statefulset.yaml
   - db-pvc.yaml
   - db-pv.yaml
+  - svc-db.yaml
