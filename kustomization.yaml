@@ -7,7 +7,6 @@ configMapGenerator:
       - wordpress.env
 
 resources:
-  - kustomization.yaml
   - svc-wordpress-loadbalancer.yaml
   - wordpress-deployment.yaml
   - wordpress-hpa.yaml
