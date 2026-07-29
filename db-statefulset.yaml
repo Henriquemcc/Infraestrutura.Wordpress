@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: wordpress-db-statefulset
+spec:
+  selector:
+    matchLabels:
+      app: wordpress-db
+  serviceName: wordpress-svc-db
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: wordpress-db
+    spec:
+      containers:
+        - name: wordpress-db
+          image: mysql:8.0
+          ports:
+            - containerPort: 3306
+          envFrom:
+            - configMapRef:
+                name: wordpress-db-configmap-env
+          volumeMounts:
+            - name: wordpress-db-volume
+              mountPath: /var/lib/mysql
+      volumes:
+        - name: wordpress-db-volume
+          persistentVolumeClaim:
+            claimName: wordpress-db-volume-claim

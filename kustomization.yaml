@@ -11,3 +11,6 @@ resources:
   - svc-wordpress-loadbalancer.yaml
   - wordpress-deployment.yaml
   - wordpress-hpa.yaml
+  - db-statefulset.yaml
+  - db-pvc.yaml
+  - db-pv.yaml

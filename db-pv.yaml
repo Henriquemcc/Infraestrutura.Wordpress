@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: wordpress-db-pv
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: wordpress-db-storage-class
+  hostPath:
+    path: /var/data/wordpress-db
+    type: DirectoryOrCreate
+
