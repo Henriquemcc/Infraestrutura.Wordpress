@@ -5,6 +5,9 @@ configMapGenerator:
   - name: wordpress-configmap-env
     envs:
       - wordpress.env
+  - name: wordpress-db-configmap-env
+    envs:
+      - mysql.env
 
 resources:
   - svc-wordpress-loadbalancer.yaml
