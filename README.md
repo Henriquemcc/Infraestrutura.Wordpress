@@ -27,7 +27,15 @@ No arquivo ```wordpress.env```, defina o valor da variável ```WORDPRESS_DB_PASS
 
 E copie esse valor para a variável ```MYSQL_PASSWORD``` do arquivo ```mysql.env```.
 
-### 3. Suba a aplicação
+### 3. Inicie o cluster Kubernetes
+
+Para iniciar o cluster Kubernetes, em um Terminal, Prompt de Comando ou PowerShell, execute o seguinte comando:
+
+```shell
+minikube start
+```
+
+### 4. Suba a aplicação
 
 Para subir a aplicação, em um Terminal, PowerShell ou Prompt de Comando, execute o seguinte comando:
 
@@ -37,15 +45,7 @@ kubectl apply -k .
 
 E a aplicação rodará.
 
-### 4. Inicie o cluster Kubernetes
-
-Para iniciar o cluster Kubernetes, em um Terminal, Prompt de Comando ou PowerShell, execute o seguinte comando:
-
-```shell
-minikube start
-```
-
-### 4. Descubra o endereço IP e a Porta
+### 5. Descubra o endereço IP e a Porta
 
 #### Endereço IP
 
@@ -87,7 +87,7 @@ wordpress-svc-db             ClusterIP      None             <none>        3306/
 
 Copie a segunda porta mostrada na coluna ```PORT(S)``` da linha cujo nome é ```svc-wordpress-loadbalancer```. No exemplo mostrado, a porta é ```31351```.
 
-### 5. Abra o Wordpress no navegador web
+### 6. Abra o Wordpress no navegador web
 
 Em um navegador web, na barra de endereço, digite: ```http://<ENDEREÇO-IP>:<PORTA>``` substitunido ```<ENDEREÇO-IP>``` pelo valor do endereço IP e ```<PORTA>``` pela porta onde está rodando a aplicação. No exemplo mostrado, esse valor seria: ```http://192.168.49.2:31351```.
 
